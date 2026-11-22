@@ -2612,6 +2612,290 @@ html {
   }
 }
 
+  /*time table*/
+#ha-sched.ha-sched-section {
+  width: 100%;
+  max-width: 100%;
+  padding: 28px 12px;
+  box-sizing: border-box;
+  overflow-x: clip;
+  display: block;
+}
+
+#ha-sched .ha-sched-box {
+  width: 100%;
+  max-width: 920px;
+  margin: 0 auto;
+  min-width: 0;
+  background: linear-gradient(150deg, #16181e, #0d0f13);
+  border: 1px solid rgba(255, 122, 24, 0.35);
+  border-radius: 20px;
+  padding: 24px 14px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+#ha-sched .ha-sched-header {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+#ha-sched .ha-sched-badge {
+  display: inline-block;
+  padding: 5px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 999px;
+  background-color: rgba(255, 122, 24, 0.16);
+  color: #ff8c2b;
+  border: 1px solid rgba(255, 122, 24, 0.45);
+  margin-bottom: 10px;
+}
+
+#ha-sched .ha-sched-title {
+  margin: 0 0 8px;
+  font-size: 22px;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+#ha-sched .ha-sched-desc {
+  margin: 0 auto;
+  max-width: 540px;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #e2e8f0;
+  overflow-wrap: anywhere;
+}
+
+/* Hide radio inputs safely */
+#ha-sched .ha-sched-radio {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  width: 0;
+  height: 0;
+}
+
+/* Tab Navigation Buttons */
+#ha-sched .ha-sched-nav {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+#ha-sched .ha-sched-tab-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-width: 0;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background-color: #1d212a;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 13.5px;
+  font-weight: 700;
+  line-height: 1.35;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  box-sizing: border-box;
+  overflow-wrap: anywhere;
+}
+
+#ha-sched .ha-sched-tab-btn:hover {
+  background-color: #262b36;
+  border-color: #ff7a18;
+}
+
+/* Active Tab Highlight */
+#ha-sched #ha-tab-1:checked ~ .ha-sched-nav label[for="ha-tab-1"],
+#ha-sched #ha-tab-2:checked ~ .ha-sched-nav label[for="ha-tab-2"],
+#ha-sched #ha-tab-3:checked ~ .ha-sched-nav label[for="ha-tab-3"],
+#ha-sched #ha-tab-4:checked ~ .ha-sched-nav label[for="ha-tab-4"] {
+  background-color: #ff7a18;
+  color: #ffffff;
+  border-color: #ff9c52;
+  box-shadow: 0 8px 20px rgba(255, 122, 24, 0.35);
+}
+
+/* Panels Visibility */
+#ha-sched .ha-sched-panel {
+  display: none;
+  min-width: 0;
+}
+
+#ha-sched #ha-tab-1:checked ~ .ha-sched-panels .ha-sched-panel-1,
+#ha-sched #ha-tab-2:checked ~ .ha-sched-panels .ha-sched-panel-2,
+#ha-sched #ha-tab-3:checked ~ .ha-sched-panels .ha-sched-panel-3,
+#ha-sched #ha-tab-4:checked ~ .ha-sched-panels .ha-sched-panel-4 {
+  display: block;
+}
+
+/* Panel Header Banner */
+#ha-sched .ha-sched-banner {
+  padding: 16px;
+  border-radius: 14px;
+  background-color: #1c2028;
+  border-left: 4px solid #ff7a18;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 20px;
+}
+
+#ha-sched .ha-sched-banner-title {
+  margin: 0 0 4px;
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+#ha-sched .ha-sched-banner-sub {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: #ff9442;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+/* Sub-category Headings */
+#ha-sched .ha-sched-cat {
+  margin: 22px 0 12px;
+  font-size: 15px;
+  font-weight: 800;
+  color: #ff8c2b;
+  letter-spacing: 0.2px;
+  overflow-wrap: anywhere;
+}
+
+/* Responsive Cards Grid (No Tables = Zero Mobile Overflow) */
+#ha-sched .ha-sched-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
+  min-width: 0;
+}
+
+#ha-sched .ha-sched-item {
+  padding: 14px 15px;
+  border-radius: 14px;
+  background-color: #1a1e26;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+#ha-sched .ha-sched-item:hover {
+  border-color: rgba(255, 122, 24, 0.5);
+  transform: translateY(-2px);
+}
+
+#ha-sched .ha-sched-item-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-width: 0;
+}
+
+#ha-sched .ha-sched-grade {
+  font-size: 15px;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+#ha-sched .ha-sched-group {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background-color: rgba(255, 122, 24, 0.18);
+  color: #ff9442;
+  border: 1px solid rgba(255, 122, 24, 0.4);
+  font-size: 11.5px;
+  font-weight: 700;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+#ha-sched .ha-sched-time {
+  margin: 0;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #e2e8f0;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+#ha-sched .ha-sched-item--free {
+  border-color: rgba(255, 122, 24, 0.28);
+}
+
+#ha-sched .ha-sched-list {
+  margin: 0;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 13.5px;
+  color: #ffffff;
+  line-height: 1.5;
+}
+
+#ha-sched .ha-sched-list li {
+  overflow-wrap: anywhere;
+}
+
+@media (min-width: 540px) {
+  #ha-sched .ha-sched-nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  #ha-sched .ha-sched-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+}
+
+@media (min-width: 800px) {
+  #ha-sched.ha-sched-section {
+    padding: 44px 20px;
+  }
+
+  #ha-sched .ha-sched-box {
+    padding: 34px 28px;
+  }
+
+  #ha-sched .ha-sched-title {
+    font-size: 27px;
+  }
+
+  #ha-sched .ha-sched-nav {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+  
+
   </style>
 </head>
 <body>
@@ -2809,6 +3093,379 @@ html {
         <span>Join WhatsApp Group</span>
         <span class="ha-cosmo-wa-pill">Free Join</span>
       </a>
+    </div>
+  </div>
+</section>
+
+<section id="ha-sched" class="ha-sched-section">
+  <div class="ha-sched-box">
+    <div class="ha-sched-header">
+      <span class="ha-sched-badge">Class Timetables</span>
+      <h2 class="ha-sched-title">පන්ති කාලසටහන්</h2>
+      <p class="ha-sched-desc">පහත Tab එකක් තෝරා අදාළ පන්ති කාලසටහන බලන්න.</p>
+    </div>
+
+    <!-- Pure CSS Radio Inputs (JS අවශ්‍ය නැත) -->
+    <input type="radio" name="ha-sched-tabs" id="ha-tab-1" class="ha-sched-radio" checked>
+    <input type="radio" name="ha-sched-tabs" id="ha-tab-2" class="ha-sched-radio">
+    <input type="radio" name="ha-sched-tabs" id="ha-tab-3" class="ha-sched-radio">
+    <input type="radio" name="ha-sched-tabs" id="ha-tab-4" class="ha-sched-radio">
+
+    <!-- Tab Buttons -->
+    <div class="ha-sched-nav">
+      <label for="ha-tab-1" class="ha-sched-tab-btn">Sesira - Piliyandala</label>
+      <label for="ha-tab-2" class="ha-sched-tab-btn">Z Zone - Wattala</label>
+      <label for="ha-tab-3" class="ha-sched-tab-btn">Wasity - Kiribathgoda</label>
+      <label for="ha-tab-4" class="ha-sched-tab-btn">Online (Cosmo)</label>
+    </div>
+
+    <!-- Tab Panels -->
+    <div class="ha-sched-panels">
+
+      <!-- PANEL 1: Sesira Piliyandala -->
+      <div class="ha-sched-panel ha-sched-panel-1">
+        <div class="ha-sched-banner">
+          <h3 class="ha-sched-banner-title">Sesira Piliyandala</h3>
+          <p class="ha-sched-banner-sub">SHAMENDRA SIR & AYESHA TEACHER • Grade 6–13 Timetable</p>
+        </div>
+
+        <h4 class="ha-sched-cat">Grade 6–13 Timetable</h4>
+        <div class="ha-sched-grid">
+          <div class="ha-sched-item">
+            <div class="ha-sched-item-top">
+              <span class="ha-sched-grade">Grade 6</span>
+              <span class="ha-sched-group">Group I</span>
+            </div>
+            <p class="ha-sched-time">Saturday • 10:00 AM – 12:00 PM</p>
+          </div>
+
+          <div class="ha-sched-item">
+            <div class="ha-sched-item-top">
+              <span class="ha-sched-grade">Grade 6</span>
+              <span class="ha-sched-group">Group II</span>
+            </div>
+            <p class="ha-sched-time">Saturday • 1:00 PM – 3:00 PM</p>
+          </div>
+
+          <div class="ha-sched-item">
+            <div class="ha-sched-item-top">
+              <span class="ha-sched-grade">Grade 7</span>
+              <span class="ha-sched-group">Group I</span>
+            </div>
+            <p class="ha-sched-time">Saturday • 5:00 PM – 7:00 PM</p>
+          </div>
+
+          <div class="ha-sched-item">
+            <div class="ha-sched-item-top">
+              <span class="ha-sched-grade">Grade 7</span>
+              <span class="ha-sched-group">Group II</span>
+            </div>
+            <p class="ha-sched-time">Tuesday • 3:30 PM – 5:30 PM</p>
+          </div>
+
+          <div class="ha-sched-item">
+            <div class="ha-sched-item-top">
+              <span class="ha-sched-grade">Grade 8</span>
+              <span class="ha-sched-group">Group I</span>
+            </div>
+            <p class="ha-sched-time">Tuesday • 5:30 PM – 7:30 PM</p>
+          </div>
+
+          <div class="ha-sched-item">
+            <div class="ha-sched-item-top">
+              <span class="ha-sched-grade">Grade 8</span>
+              <span class="ha-sched-group">Group II</span>
+            </div>
+            <p class="ha-sched-time">Saturday • 3:00 PM – 5:00 PM</p>
+          </div>
+
+          <div class="ha-sched-item">
+            <div class="ha-sched-item-top">
+              <span class="ha-sched-grade">Grade 9</span>
+              <span class="ha-sched-group">Group I</span>
+            </div>
+            <p class="ha-sched-time">Saturday • 11:00 AM – 1:00 PM</p>
+          </div>
+
+          <div class="ha-sched-item">
+            <div class="ha-sched-item-top">
+              <span class="ha-sched-grade">Grade 9</span>
+              <span class="ha-sched-group">Group II</span>
+            </div>
+            <p class="ha-sched-time">Saturday • 3:00 PM – 5:00 PM</p>
+          </div>
+
+          <div class="ha-sched-item">
+            <div class="ha-sched-item-top">
+              <span class="ha-sched-grade">Grade 10</span>
+              <span class="ha-sched-group">Group I</span>
+            </div>
+            <p class="ha-sched-time">Saturday • 9:00 AM – 11:00 AM</p>
+          </div>
+
+          <div class="ha-sched-item">
+            <div class="ha-sched-item-top">
+              <span class="ha-sched-grade">Grade 10</span>
+              <span class="ha-sched-group">Group II</span>
+            </div>
+            <p class="ha-sched-time">Tuesday • 3:30 PM – 5:30 PM</p>
+          </div>
+
+          <div class="ha-sched-item">
+            <div class="ha-sched-item-top">
+              <span class="ha-sched-grade">Grade 11</span>
+              <span class="ha-sched-group">Group I</span>
+            </div>
+            <p class="ha-sched-time">Saturday • 5:00 PM – 7:00 PM</p>
+          </div>
+
+          <div class="ha-sched-item">
+            <div class="ha-sched-item-top">
+              <span class="ha-sched-grade">Grade 11</span>
+              <span class="ha-sched-group">Group II</span>
+            </div>
+            <p class="ha-sched-time">Tuesday • 5:30 PM – 7:30 PM</p>
+          </div>
+        </div>
+
+        <h4 class="ha-sched-cat">General English</h4>
+        <div class="ha-sched-grid">
+          <div class="ha-sched-item">
+            <div class="ha-sched-item-top">
+              <span class="ha-sched-grade">General English</span>
+              <span class="ha-sched-group">Group I</span>
+            </div>
+            <p class="ha-sched-time">Saturday Morning • 7:00 AM – 9:00 AM</p>
+          </div>
+
+          <div class="ha-sched-item">
+            <div class="ha-sched-item-top">
+              <span class="ha-sched-grade">General English</span>
+              <span class="ha-sched-group">Group II</span>
+            </div>
+            <p class="ha-sched-time">Saturday Night • 7:00 PM – 9:00 PM</p>
+          </div>
+        </div>
+
+        <h4 class="ha-sched-cat">Spoken English</h4>
+        <div class="ha-sched-grid">
+          <div class="ha-sched-item">
+            <div class="ha-sched-item-top">
+              <span class="ha-sched-grade">Spoken English</span>
+              <span class="ha-sched-group">Group I</span>
+            </div>
+            <p class="ha-sched-time">Saturday • 1:00 PM – 3:00 PM</p>
+          </div>
+
+          <div class="ha-sched-item">
+            <div class="ha-sched-item-top">
+              <span class="ha-sched-grade">Spoken English</span>
+              <span class="ha-sched-group">Group II</span>
+            </div>
+            <p class="ha-sched-time">Saturday • 8:00 PM – 10:00 PM</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PANEL 2: Z Zone - Wattala -->
+      <div class="ha-sched-panel ha-sched-panel-2">
+        <div class="ha-sched-banner">
+          <h3 class="ha-sched-banner-title">Z Zone - Wattala</h3>
+          <p class="ha-sched-banner-sub">6-13 Time table</p>
+        </div>
+
+        <div class="ha-sched-grid">
+          <div class="ha-sched-item">
+            <div class="ha-sched-item-top">
+              <span class="ha-sched-grade">General English</span>
+            </div>
+            <p class="ha-sched-time">Sunday at 10.30am</p>
+          </div>
+
+          <div class="ha-sched-item">
+            <div class="ha-sched-item-top">
+              <span class="ha-sched-grade">Grade 10</span>
+            </div>
+            <p class="ha-sched-time">Sunday at 3.30pm</p>
+          </div>
+
+          <div class="ha-sched-item">
+            <div class="ha-sched-item-top">
+              <span class="ha-sched-grade">Grade 11</span>
+            </div>
+            <p class="ha-sched-time">Sunday at 5.30pm</p>
+          </div>
+
+          <div class="ha-sched-item">
+            <div class="ha-sched-item-top">
+              <span class="ha-sched-grade">Grade 6/7</span>
+            </div>
+            <p class="ha-sched-time">Sunday 3.30 - 5.30</p>
+          </div>
+
+          <div class="ha-sched-item">
+            <div class="ha-sched-item-top">
+              <span class="ha-sched-grade">Grade 8/9</span>
+            </div>
+            <p class="ha-sched-time">Sunday 5.30 - 7.30</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PANEL 3: Wasity - Kiribathgoda -->
+      <div class="ha-sched-panel ha-sched-panel-3">
+        <div class="ha-sched-banner">
+          <h3 class="ha-sched-banner-title">Wasity - Kiribathgoda</h3>
+          <p class="ha-sched-banner-sub">Physical Class Schedule</p>
+        </div>
+
+        <div class="ha-sched-grid">
+          <div class="ha-sched-item">
+            <div class="ha-sched-item-top">
+              <span class="ha-sched-grade">General English</span>
+            </div>
+            <p class="ha-sched-time">Sunday 1.15pm - 3.15pm</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PANEL 4: Online ලංකාවටම - Cosmo English Campus -->
+      <div class="ha-sched-panel ha-sched-panel-4">
+        <div class="ha-sched-banner">
+          <h3 class="ha-sched-banner-title">Online ලංකාවටම – Cosmo English Campus</h3>
+          <p class="ha-sched-banner-sub">Online Class Timetable</p>
+        </div>
+
+        <h4 class="ha-sched-cat">Main & Special Classes</h4>
+        <div class="ha-sched-grid">
+          <div class="ha-sched-item">
+            <div class="ha-sched-item-top"><span class="ha-sched-grade">Grade 6</span></div>
+            <p class="ha-sched-time">Friday at 4.30pm</p>
+          </div>
+
+          <div class="ha-sched-item">
+            <div class="ha-sched-item-top"><span class="ha-sched-grade">Grade 7</span></div>
+            <p class="ha-sched-time">Friday 6.00 - 7.30</p>
+          </div>
+
+          <div class="ha-sched-item">
+            <div class="ha-sched-item-top"><span class="ha-sched-grade">Grade 8</span></div>
+            <p class="ha-sched-time">Monday 6 - 7.30</p>
+          </div>
+
+          <div class="ha-sched-item">
+            <div class="ha-sched-item-top"><span class="ha-sched-grade">Grade 9</span></div>
+            <p class="ha-sched-time">Thursday 6.00 - 7.30</p>
+          </div>
+
+          <div class="ha-sched-item">
+            <div class="ha-sched-item-top"><span class="ha-sched-grade">Grade 10</span></div>
+            <p class="ha-sched-time">Thursday 7.30 - 9.30</p>
+          </div>
+
+          <div class="ha-sched-item">
+            <div class="ha-sched-item-top"><span class="ha-sched-grade">Grade 11</span></div>
+            <p class="ha-sched-time">Monday at 7.30 - 9.00</p>
+          </div>
+
+          <div class="ha-sched-item">
+            <div class="ha-sched-item-top"><span class="ha-sched-grade">General English</span></div>
+            <p class="ha-sched-time">Monday 4.30 - 6.00pm</p>
+          </div>
+
+          <div class="ha-sched-item">
+            <div class="ha-sched-item-top">
+              <span class="ha-sched-grade">Spoken English For Adults</span>
+              <span class="ha-sched-group">Two month course</span>
+            </div>
+            <p class="ha-sched-time">Monday 9.30-11.00 • Wednesday 9.30-11 • Friday 9.30-11</p>
+          </div>
+
+          <div class="ha-sched-item">
+            <div class="ha-sched-item-top"><span class="ha-sched-grade">Booster + Writing (6/7/8)</span></div>
+            <p class="ha-sched-time">Thursday at 4.30</p>
+          </div>
+
+          <div class="ha-sched-item">
+            <div class="ha-sched-item-top"><span class="ha-sched-grade">Booster Programme</span></div>
+            <p class="ha-sched-time">Thursday 9.30</p>
+          </div>
+
+          <div class="ha-sched-item">
+            <div class="ha-sched-item-top"><span class="ha-sched-grade">Spoken Junior</span></div>
+            <p class="ha-sched-time">Wednesday at 6.00pm</p>
+          </div>
+
+          <div class="ha-sched-item">
+            <div class="ha-sched-item-top"><span class="ha-sched-grade">Paper Class</span></div>
+            <p class="ha-sched-time">Day 1: Wednesday 7.30 • Day 2: Friday 7.30</p>
+          </div>
+
+          <div class="ha-sched-item">
+            <div class="ha-sched-item-top"><span class="ha-sched-grade">Writing Class</span></div>
+            <p class="ha-sched-time">Wednesday 4.30</p>
+          </div>
+
+          <div class="ha-sched-item">
+            <div class="ha-sched-item-top"><span class="ha-sched-grade">Vocabulary Plus Paper Class (12/13)</span></div>
+            <p class="ha-sched-time">Tuesday at 9.30pm</p>
+          </div>
+        </div>
+
+        <h4 class="ha-sched-cat">Extra Free Classes</h4>
+        <div class="ha-sched-grid">
+          <div class="ha-sched-item ha-sched-item--free">
+            <div class="ha-sched-item-top">
+              <span class="ha-sched-grade">Grade 6-8</span>
+              <span class="ha-sched-group">Free</span>
+            </div>
+            <ul class="ha-sched-list">
+              <li>Writing and booster programme</li>
+              <li>Spoken English</li>
+            </ul>
+          </div>
+
+          <div class="ha-sched-item ha-sched-item--free">
+            <div class="ha-sched-item-top">
+              <span class="ha-sched-grade">Grade 9</span>
+              <span class="ha-sched-group">Free</span>
+            </div>
+            <ul class="ha-sched-list">
+              <li>Writing class</li>
+              <li>Booster programme</li>
+              <li>Spoken English</li>
+            </ul>
+          </div>
+
+          <div class="ha-sched-item ha-sched-item--free">
+            <div class="ha-sched-item-top">
+              <span class="ha-sched-grade">Grade 10/11</span>
+              <span class="ha-sched-group">Free</span>
+            </div>
+            <ul class="ha-sched-list">
+              <li>Writing class</li>
+              <li>Booster programme</li>
+              <li>Spoken English</li>
+              <li>Paper class (two days)</li>
+            </ul>
+          </div>
+
+          <div class="ha-sched-item ha-sched-item--free">
+            <div class="ha-sched-item-top">
+              <span class="ha-sched-grade">Grade 12/13</span>
+              <span class="ha-sched-group">Free</span>
+            </div>
+            <ul class="ha-sched-list">
+              <li>Writing class</li>
+              <li>Booster programme</li>
+              <li>Spoken English</li>
+              <li>Vocabulary class</li>
+              <li>Paper class</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -3306,6 +3963,7 @@ window.onclick = function(event) {
     window.open(waUrl, '_blank', 'noopener,noreferrer');
   });
 })();
+
 
 </script>
 
