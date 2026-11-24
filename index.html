@@ -2895,7 +2895,7 @@ html {
 }
 
   /*yt video*/
-  #ha-vid.ha-vid-section {
+#ha-vid.ha-vid-section {
   width: 100%;
   max-width: 100%;
   padding: 26px 12px;
@@ -2903,6 +2903,8 @@ html {
   display: block;
   box-sizing: border-box;
   overflow-x: clip;
+  position: relative;
+  z-index: 2;
 }
 
 #ha-vid .ha-vid-card {
@@ -2918,6 +2920,7 @@ html {
   color: #0f172a;
   box-sizing: border-box;
   overflow: hidden;
+  position: relative;
 }
 
 #ha-vid .ha-vid-header {
@@ -2967,6 +2970,8 @@ html {
   cursor: pointer;
   box-sizing: border-box;
   user-select: none;
+  z-index: 3;
+  pointer-events: auto;
 }
 
 #ha-vid .ha-vid-thumb {
@@ -2975,6 +2980,7 @@ html {
   object-fit: cover;
   display: block;
   transition: transform 0.3s ease;
+  pointer-events: none;
 }
 
 #ha-vid .ha-vid-player:hover .ha-vid-thumb {
@@ -2984,6 +2990,8 @@ html {
 #ha-vid .ha-vid-overlay {
   position: absolute;
   inset: 0;
+  z-index: 4;
+  pointer-events: auto;
   background: rgba(15, 23, 42, 0.38);
   display: flex;
   flex-direction: column;
@@ -3011,6 +3019,7 @@ html {
   padding-left: 3px;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
   transition: transform 0.2s ease, background-color 0.2s ease;
+  pointer-events: none;
 }
 
 #ha-vid .ha-vid-player:hover .ha-vid-play-btn {
@@ -3026,6 +3035,7 @@ html {
   font-size: 12px;
   font-weight: 800;
   line-height: 1.3;
+  pointer-events: none;
 }
 
 #ha-vid .ha-vid-iframe {
@@ -3035,6 +3045,7 @@ html {
   height: 100%;
   border: 0;
   display: block;
+  z-index: 5;
 }
 
 @media (min-width: 640px) {
@@ -3277,6 +3288,7 @@ html {
       role="button"
       tabindex="0"
       aria-label="Play seminar video"
+      onclick="haPlayVideo(this)"
     >
       <img
         src="https://img.youtube.com/vi/2K47l-yo0BQ/hqdefault.jpg"
@@ -4160,50 +4172,42 @@ window.onclick = function(event) {
 
 
 //yt video
-(function () {
-  function startHaVideo(player) {
-    if (!player || player.getAttribute('data-loaded') === 'true') return;
+function haPlayVideo(player) {
+  if (!player || player.getAttribute("data-loaded") === "true") return;
 
-    const videoId = player.getAttribute('data-video-id');
-    const title = player.getAttribute('data-video-title') || 'Seminar Video';
-    if (!videoId) return;
+  var videoId = player.getAttribute("data-video-id");
+  var title = player.getAttribute("data-video-title") || "Seminar Video";
+  if (!videoId) return;
 
-    player.setAttribute('data-loaded', 'true');
-    player.removeAttribute('role');
-    player.removeAttribute('tabindex');
-    player.style.cursor = 'default';
+  player.setAttribute("data-loaded", "true");
+  player.removeAttribute("role");
+  player.removeAttribute("tabindex");
+  player.removeAttribute("onclick");
+  player.style.cursor = "default";
 
-    const iframe = document.createElement('iframe');
-    iframe.className = 'ha-vid-iframe';
-    iframe.src =
-      'https://www.youtube.com/embed/' +
-      encodeURIComponent(videoId) +
-      '?autoplay=1&rel=0&modestbranding=1&playsinline=1';
-    iframe.title = title;
-    iframe.allow =
-      'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-    iframe.allowFullscreen = true;
+  var iframe = document.createElement("iframe");
+  iframe.className = "ha-vid-iframe";
+  iframe.src =
+    "https://www.youtube.com/embed/" +
+    encodeURIComponent(videoId) +
+    "?autoplay=1&rel=0&modestbranding=1&playsinline=1";
+  iframe.title = title;
+  iframe.allow =
+    "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+  iframe.allowFullscreen = true;
 
-    player.innerHTML = '';
-    player.appendChild(iframe);
+  player.innerHTML = "";
+  player.appendChild(iframe);
+}
+
+document.addEventListener("keydown", function (e) {
+  if (e.key !== "Enter" && e.key !== " ") return;
+  var player = e.target.closest("#ha-vid .ha-vid-player");
+  if (player) {
+    e.preventDefault();
+    haPlayVideo(player);
   }
-
-  document.addEventListener('click', function (e) {
-    const player = e.target.closest('#ha-vid .ha-vid-player');
-    if (player) {
-      startHaVideo(player);
-    }
-  });
-
-  document.addEventListener('keydown', function (e) {
-    if (e.key !== 'Enter' && e.key !== ' ') return;
-    const player = e.target.closest('#ha-vid .ha-vid-player');
-    if (player) {
-      e.preventDefault();
-      startHaVideo(player);
-    }
-  });
-})();
+});
 
 
 </script>
