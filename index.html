@@ -3072,6 +3072,161 @@ html {
   }
 }
 
+/*why choce us */
+#ha-why.ha-why-section {
+  width: 100%;
+  max-width: 100%;
+  padding: 28px 12px;
+  background: transparent;
+  display: block;
+  box-sizing: border-box;
+  overflow-x: clip;
+}
+
+#ha-why .ha-why-card {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  min-width: 0;
+  background: linear-gradient(150deg, #16181e, #0d0f13);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 20px;
+  padding: 24px 14px;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.45);
+  color: #ffffff;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+#ha-why .ha-why-header {
+  text-align: center;
+  margin-bottom: 24px;
+  min-width: 0;
+}
+
+#ha-why .ha-why-badge {
+  display: inline-block;
+  padding: 5px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 999px;
+  background-color: rgba(212, 175, 55, 0.14);
+  color: #f3d27a;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  margin-bottom: 10px;
+}
+
+#ha-why .ha-why-title {
+  margin: 0 0 8px;
+  font-size: 22px;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+#ha-why .ha-why-sub {
+  margin: 0 auto;
+  max-width: 600px;
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: #e2e8f0;
+  overflow-wrap: anywhere;
+}
+
+#ha-why .ha-why-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
+  min-width: 0;
+}
+
+#ha-why .ha-why-item {
+  padding: 18px 15px;
+  border-radius: 16px;
+  background-color: #191d25;
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  border-top: 3px solid #f3d27a;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+  box-sizing: border-box;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#ha-why .ha-why-item:hover {
+  transform: translateY(-2px);
+  border-color: rgba(243, 210, 122, 0.55);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
+}
+
+#ha-why .ha-why-item-top {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+#ha-why .ha-why-tag {
+  align-self: flex-start;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background-color: rgba(243, 210, 122, 0.14);
+  color: #f3d27a;
+  border: 1px solid rgba(243, 210, 122, 0.32);
+  font-size: 11.5px;
+  font-weight: 700;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+#ha-why .ha-why-item-title {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+#ha-why .ha-why-text {
+  margin: 0;
+  font-size: 13.5px;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 1.75;
+  overflow-wrap: anywhere;
+}
+
+@media (min-width: 720px) {
+  #ha-why.ha-why-section {
+    padding: 44px 20px;
+  }
+
+  #ha-why .ha-why-card {
+    padding: 34px 28px;
+  }
+
+  #ha-why .ha-why-title {
+    font-size: 27px;
+  }
+
+  #ha-why .ha-why-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  #ha-why .ha-why-item {
+    padding: 22px 20px;
+  }
+
+  #ha-why .ha-why-item-title {
+    font-size: 18px;
+  }
+}
+
+
   </style>
 </head>
 <body>
@@ -3302,6 +3457,72 @@ html {
     </div>
   </div>
 </section>
+
+<section id="ha-why" class="ha-why-section">
+  <div class="ha-why-card">
+    <div class="ha-why-header">
+      <span class="ha-why-badge">Why Choose Us</span>
+      <h2 class="ha-why-title">අනිත් පන්තිවලට වඩා අපි වෙනස් වෙන්නේ ඇයි?</h2>
+      <p class="ha-why-sub">
+        මූලික අඩිතාලමේ සිට ඉහළ ප්‍රතිඵල සහ විශ්වාසය දක්වා පියවරෙන් පියවර මඟ පෙන්වීම.
+      </p>
+    </div>
+
+    <div class="ha-why-grid">
+      <!-- 1. English Booster Programme -->
+      <article class="ha-why-item">
+        <div class="ha-why-item-top">
+          <span class="ha-why-tag">01 • Foundation & 'A' Pass</span>
+          <h3 class="ha-why-item-title">English Booster Programme</h3>
+        </div>
+        <p class="ha-why-text">
+          ප්‍රශ්න පත්‍රයක් දැක්කම හිත ගැහෙන කාලේ දැන් ඉවරයි! අත්‍යවශ්‍ය Grammar, Reading සහ Writing වල මූලික අඩිතාලම හරියටම හදාගෙන, අකුරක් අකුරක් ගානේ තේරුම් අරන් ඉගෙන ගන්න අපි ඔයාට මඟ පෙන්වනවා. ඉහළ ලකුණක් — විශේෂයෙන්ම 'A' සාමාර්ථයක් — දිනාගන්න අවශ්‍ය හැකියාවත්, තමන් ගැනම තියෙන නොසැලෙන ආත්ම විශ්වාසයත් එකට ගොඩනඟා ගනිමින්, English එක්ක අලුත් ගමනක් පටන් ගන්න අදම එන්න.
+        </p>
+      </article>
+
+      <!-- 2. FREE PAPER CLASSES -->
+      <article class="ha-why-item">
+        <div class="ha-why-item-top">
+          <span class="ha-why-tag">02 • Grade 10 & 11</span>
+          <h3 class="ha-why-item-title">FREE PAPER CLASSES (10 සහ 11 ශ්‍රේණි සඳහා)</h3>
+        </div>
+        <p class="ha-why-text">
+          10 සහ 11 ශ්‍රේණි සිසුන් සඳහා නොමිලේ ප්‍රශ්න පත්‍ර පන්ති — ප්‍රශ්න පත්‍රය මනාව හුරු කරවන සම්පූර්ණ පුහුණුවක්!
+        </p>
+        <p class="ha-why-text">
+          ප්‍රශ්න පත්‍රයේ ස්වභාවය, එන ප්‍රශ්න රටා, කාලය කළමනාකරණය කරගන්නා හැටි සහ පිළිතුරු ලියන නිවැරදි ක්‍රමවේදය මුල සිටම සිසුන්ට හොඳින් හුරු කරවනවා. විභාගයට යන්න කලින්ම ප්‍රශ්න පත්‍රය සමඟ හොඳ පුහුණුවක් ලබා දී, බය නැතුව විභාගයට මුහුණ දෙන්න පුළුවන් විශ්වාසය අපි ගොඩනඟනවා.
+        </p>
+      </article>
+
+      <!-- 3. FREE WRITING CLASSES -->
+      <article class="ha-why-item">
+        <div class="ha-why-item-top">
+          <span class="ha-why-tag">Learn to write better English</span>
+          <h3 class="ha-why-item-title">FREE WRITING CLASSES</h3>
+        </div>
+        <p class="ha-why-text">
+          බිංදුවේ ඉඳන් — හොඳ සංකීර්ණ වාක්‍ය (Complex Sentences) සහ රචනා දක්වා!
+        </p>
+        <p class="ha-why-text">
+          වචන ගළපලා සරල වාක්‍යයක් හදාගන්න බැරි තැන ඉඳන් පටන් අරන්, නිවැරදි ව්‍යාකරණ සමඟින් අදහස් පැහැදිලිව ගොඩනඟන හැටි අපි පියවරෙන් පියවර උගන්වනවා. සරල වාක්‍ය වලින් නතර නොවී, හේතු, සම්බන්ධතා සහ ගැඹුරු අදහස් එකතු කරමින් හොඳ Complex Sentences ගොඩනඟන්නත්, ඒ ඔස්සේ ලස්සන Essays / රචනා ලියන්නත් අවශ්‍ය පුහුණුව මෙහිදී ලැබෙනවා.
+        </p>
+      </article>
+
+      <!-- 4. SPOKEN ENGLISH -->
+      <article class="ha-why-item">
+        <div class="ha-why-item-top">
+          <span class="ha-why-tag">Pronunciation & Fluency</span>
+          <h3 class="ha-why-item-title">SPOKEN ENGLISH — කතා කරන්න තියෙන බය නැති කරලා, පැහැදිලිව English කතා කරමු!</h3>
+        </div>
+        <p class="ha-why-text">
+          ගොඩක් අයට English තේරුණත්, කතා කරන්න ගියාම වචන පැටලෙනවා හෝ වැරදෙයි කියලා බය හිතෙනවා. අපේ Spoken English පන්තියේදී අපි ඔයාට පරිපූර්ණ වචන මාලාවකට වඩා, හිතේ තියෙන අදහස එවෙලේම සරල වාක්‍ය වලට පෙරළා කතා කරන පුරුද්ද හදනවා. දෛනික ජීවිතයේදී, පාසලේදී, විශ්වවිද්‍යාලයේදී සහ රැකියා ස්ථානවලදී භාවිත කරන ප්‍රායෝගික යෙදුම්, නිවැරදි උච්චාරණය (Pronunciation) සහ ස්වාභාවික ගලා යෑම (Fluency) පියවරෙන් පියවර පුහුණු කරමින් — කිසිම ලැජ්ජාවක් නැතුව English කතා කරන කෙනෙක් බවට ඔයාව පත් කරනවා.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+
 
 <section id="ha-sched" class="ha-sched-section">
   <div class="ha-sched-box">
